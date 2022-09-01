@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
+// sss
 #app {
   width: 1920px;
   height: 1080px;
