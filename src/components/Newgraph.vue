@@ -163,7 +163,7 @@ export default {
         .attr("class", "container1")
         .attr(
           "transform",
-          "translate(" + margin1.left + "," + margin1.top + ")scale(0.8)"
+          "translate(" + margin1.left + "," + margin1.top + ") scale(0.8)"
         );
 
       //画出根节点
@@ -768,7 +768,7 @@ export default {
         })
 
         .attr("width", function (d) {
-          circlewidth1 = d3.select(this.getComputedTextLength())._groups[0][0];
+          circlewidth1 = d3.select()._groups[0][0];
           return d3.select(this.getComputedTextLength())._groups[0][0];
         });
     },
