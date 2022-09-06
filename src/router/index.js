@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index/index.vue";
+import createHelper from "vue-router-keep-alive-helper";
 
 Vue.use(VueRouter);
 
@@ -13,29 +14,31 @@ const routes = [
   {
     path: "/home",
     name: "Home",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Home.vue"),
   },
   {
     path: "/newGraph",
     name: "NewGraph",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../components/Newgraph.vue"),
   },
   {
     path: "/company",
     name: "Company",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../components/Company.vue"),
+  },
+  {
+    path: "/search",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Search.vue"),
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Detail.vue"),
   },
 ];
 
@@ -44,5 +47,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+// replaceStay是需要缓存的组件地址，缓存后跳转该页面的地址必须是$router.replace('/url')
+createHelper({ Vue, router, replaceStay: ["/search"] });
 
 export default router;
