@@ -40,6 +40,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../components/Detail.vue"),
   },
+  {
+    path: "/hello",
+    name: "Hello",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Hello.vue"),
+  },
+  {
+    path: "/tree",
+    name: "Tree",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Tree.vue"),
+  },
+  // {
+  //   path: "/socket",
+  //   name: "Socket",
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../components/Socket.vue"),
+  // },
 ];
 
 const router = new VueRouter({
