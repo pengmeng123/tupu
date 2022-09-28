@@ -6,6 +6,7 @@ import "echarts";
 import Echarts from "vue-echarts";
 import Vant from "vant";
 import websocket from "vue-native-websocket";
+import service from "./service";
 import "vant/lib/index.css";
 
 // 根据屏幕变化设置rem
@@ -24,6 +25,7 @@ Vue.use(websocket, "ws://10.10.200.96:9090", {
 Vue.config.productionTip = false;
 Vue.component("v-chart", Echarts);
 Vue.use(Vant);
+Vue.prototype.$service = service
 
 window.myApp = new Vue({
   router,

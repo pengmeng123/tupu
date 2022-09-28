@@ -78,7 +78,6 @@ export default {
     },
 
     websocketsend(e) {
-      console.log("8--");
       //数据发送
       this.$socket.send("some data");
       //   this.$socket.send(JSON.stringify({ test: "www.baidu.com" }));

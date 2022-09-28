@@ -52,6 +52,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Tree.vue"),
   },
+  {
+    path: "/user",
+    name: "User",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/User.vue"),
+  },
+  {
+    path: "/test",
+    name: "Test",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/Test.vue"),
+  },
   // {
   //   path: "/socket",
   //   name: "Socket",

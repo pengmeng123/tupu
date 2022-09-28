@@ -20,5 +20,33 @@ module.exports = {
             ]
         }
     }
-  }
+  },
+  devServer: {
+    proxy: {
+      '^/qcc': {
+        target: 'http://z.test.greatld.com',
+        changeOrigin: true,
+      },
+      '^/kzz/enterprise': {
+        target: 'http://z.test.greatld.com',
+        changeOrigin: true,
+      },
+      '/geoconv': {
+        target: 'https://api.map.baidu.com/',
+        secure: true,
+      },
+      '/routematrix': {
+        target: 'https://api.map.baidu.com/',
+        secure: true,
+      },
+      '/reverse_geocoding': {
+        target: 'https://api.map.baidu.com/',
+        secure: true,
+      },
+      '/geocoding': {
+        target: 'https://api.map.baidu.com/',
+        secure: true,
+      },
+    },
+  },
 }
